@@ -1,0 +1,138 @@
+.pokedex-screen {
+  background-color: #4caf50;
+  background-image: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0 1px, transparent 1px 3px);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #1b5e20;
+  height: 100%;
+  overflow-y: auto;
+  font-family: 'Pokemon GB';
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.pokemon-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* ⚠️ Elimina cualquier sombra o borde que IonItem pueda dejar */
+ion-item {
+  --background: transparent;
+  --border-radius: 0;
+  --inner-border-width: 0;
+  --highlight-height: 0;
+  --min-height: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  --border-color: transparent;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+.pokemon-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #b2dfdb;
+  border-radius: 12px;
+  padding: 8px;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+}
+
+/* ✅ SOLO LÍNEAS AZULES ARRIBA Y ABAJO */
+.selected-item {
+  border: none;
+  background-color: #e8f0fe;
+}
+
+.selected-item::before,
+.selected-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3f51b5;
+  border-radius: 2px;
+}
+
+.selected-item::before {
+  top: 0;
+}
+
+.selected-item::after {
+  bottom: 0;
+}
+
+/* ✅ Texto más negro al seleccionar */
+.selected-item .pokemon-label {
+  transform: scale(1.05);
+  color: #000;
+}
+
+.pokemon-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-left: auto;
+  text-align: right;
+  width: 100%;
+  padding-right: 16px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ Esquinas del contenedor corregidas */
+div#picture {
+  height: 170px;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 9px;
+  background-color: #fff;
+  border: 3px solid #494949;
+  clear: both;
+
+  border-radius: 15px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+
+  overflow: hidden;
+}

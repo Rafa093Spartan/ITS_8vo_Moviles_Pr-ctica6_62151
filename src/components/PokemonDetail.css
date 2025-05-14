@@ -1,0 +1,88 @@
+.pokemonsdetails {
+  color: #d0d0d0; /* gris claro para texto */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2a2a3d; /* gris oscuro azulado */
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+.detail-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.detail-image-container img {
+  width: 90px;   /* reducido de 110px a 90px */
+  height: 90px;  /* reducido de 110px a 90px */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #2f5947; /* verde oscuro */
+  box-shadow: 0 0 10px #2f5947;
+}
+
+.detail-info h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #3a7854; /* verde oscuro */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.detail-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-info li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+  font-size: 1rem;
+  color: #d0d0d0; /* gris claro */
+  font-weight: 500;
+}
+
+.detail-info li:last-child {
+  border-bottom: none;
+}
+
+.detail-info li strong {
+  color: #5c8768; /* verde grisáceo */
+  font-weight: 700;
+  flex: 1;
+  text-align: left;
+}
+
+.detail-info li span {
+  color: #b0b0b0; /* gris medio */
+  font-weight: 400;
+  flex: 1;
+  text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+  .pokemonsdetails {
+    padding: 16px;
+    max-width: 280px;
+  }
+  .detail-image-container img {
+    width: 70px;  /* también reducido en móvil */
+    height: 70px;
+  }
+  .detail-info h3 {
+    font-size: 1.1rem;
+  }
+  .detail-info li {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+}
