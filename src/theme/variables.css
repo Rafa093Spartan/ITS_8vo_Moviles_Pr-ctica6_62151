@@ -1038,3 +1038,9 @@ http://ionicframework.com/docs/theming/ */
   transform: scale(0.95);
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
 }
+
+#picture > div {
+  height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+}

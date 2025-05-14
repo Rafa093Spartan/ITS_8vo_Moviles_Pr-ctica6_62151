@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonPage, IonList, IonItem, IonLabel, IonThumbnail, IonImg, useIonAlert } from '@ionic/react';
+import { IonList, IonItem, IonLabel, IonThumbnail, IonImg, useIonAlert } from '@ionic/react';
 
 const PackPage: React.FC = () => {
   const [items, setItems] = useState<any[]>([]);
@@ -46,9 +46,9 @@ const PackPage: React.FC = () => {
   }, [selectedIndex]);
 
   return (
-    <IonPage>
-      <IonContent>
-        <IonList>
+    <div style={{ height: '100%' }}>
+      <div style={{ height: '100%', overflowY: 'auto' }}>
+        <IonList style={{ padding: 0 }}>
           {items.map((item, index) => (
             <IonItem
               key={index}
@@ -62,8 +62,8 @@ const PackPage: React.FC = () => {
             </IonItem>
           ))}
         </IonList>
-      </IonContent>
-    </IonPage>
+      </div>
+    </div>
   );
 };
 

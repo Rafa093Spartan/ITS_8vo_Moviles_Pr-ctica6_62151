@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonPage, IonList, IonItem, IonLabel, IonThumbnail, IonImg, useIonAlert } from '@ionic/react';
+import { IonList, IonItem, IonLabel, IonThumbnail, IonImg, useIonAlert } from '@ionic/react';
 
 const PokedexPage: React.FC = () => {
   const [pokemons, setPokemons] = useState<any[]>([]);
@@ -46,9 +46,9 @@ const PokedexPage: React.FC = () => {
   }, [selectedIndex]);
 
   return (
-    <IonPage>
-      <IonContent>
-        <IonList>
+    <div style={{ height: '100%' }}>
+      <div style={{ height: '100%', overflowY: 'auto' }}>
+        <IonList style={{ padding: 0 }}>
           {pokemons.map((pokemon, index) => (
             <IonItem
               key={index}
@@ -62,8 +62,8 @@ const PokedexPage: React.FC = () => {
             </IonItem>
           ))}
         </IonList>
-      </IonContent>
-    </IonPage>
+      </div>
+    </div>
   );
 };
 
